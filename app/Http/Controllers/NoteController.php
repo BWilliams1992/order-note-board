@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class NoteController extends Controller
 {
@@ -12,7 +13,8 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+        $notes = Note::all();
+        return Inertia::render('Notes/Index', ['notes' => $notes]);
     }
 
     /**
@@ -28,7 +30,12 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'order_number' => 'required',
+            'message' => 'required',
+            'author' => 'required',
+        ]);
+        return Inertia::render('Notes/Index', ['flash' => 'Note created successfully.']);
     }
 
     /**
