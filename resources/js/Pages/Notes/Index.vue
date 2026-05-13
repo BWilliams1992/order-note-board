@@ -4,10 +4,8 @@
       <div class="flex flex-col overflow-x-auto">
         <CreateForm/>
         <h2 class="font-semibold text-lg">Notes listing:</h2>
-        <div v-if="notes">
-          <div v-for="note in notes">
-            <NoteCard :note="note"/>
-          </div>
+        <div v-if="notes" class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4">
+          <NoteCard v-for="note in notes" :note="note"/>
         </div>
       </div>
     </div>

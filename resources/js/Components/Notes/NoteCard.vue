@@ -1,13 +1,16 @@
 <template>
-  <div>
+  <div class="col-span-1 md:col-span-4 border-2 border-black rounded p-2">
     <div>
-      Author: {{ note.author }}
+      <span class="font-semibold">Author:</span> {{ note.author }}
     </div>
     <div>
-      Order number:{{ note.order_number }}
+      <span class="font-semibold">Order number:</span>{{ note.order_number }}
     </div>
     <div>
-      Message: {{ note.message }}
+      <span class="font-semibold">Message:</span> {{ note.message }}
+    </div>
+    <div>
+      <span class="font-semibold">Created at:</span> {{ note.created_at }}
     </div>
   </div>
 </template>
