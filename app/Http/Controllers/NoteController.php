@@ -11,9 +11,15 @@ class NoteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $notes = Note::all();
+        if ($request->query('order_number')) {
+            $order_number = '%' . $request->query('order_number') . '%';
+            $notes = Note::where('order_number', 'LIKE', $order_number)->get();
+        } else {
+            $notes = Note::all();
+        }
+
         return Inertia::render('Notes/Index', ['notes' => $notes]);
     }
 
