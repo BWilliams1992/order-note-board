@@ -14,7 +14,7 @@
 <script setup>
   import { usePage } from '@inertiajs/vue3';
   import CreateForm from '../../Components/Notes/CreateForm.vue';
-import NoteCard from '../../Components/Notes/NoteCard.vue';
+  import NoteCard from '../../Components/Notes/NoteCard.vue';
 
   const page = usePage();
 

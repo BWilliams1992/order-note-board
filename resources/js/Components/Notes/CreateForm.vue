@@ -40,6 +40,9 @@
     order_number:null,
   })
 
-  const create = () => form.post('/api/notes');
+  const create = () => {
+    form.post('/api/notes');
+    form.reset();
+  }
 
 </script>

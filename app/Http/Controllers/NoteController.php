@@ -36,7 +36,7 @@ class NoteController extends Controller
             'author' => 'required',
         ]);
         Note::create($validated);
-        return redirect('/')->with(['flash' => 'Note created successfully.']);
+        return Inertia::flash('success', 'Note created successfully.')->back();
     }
 
     /**
