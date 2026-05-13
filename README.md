@@ -2,7 +2,7 @@
 
 This project uses DDEV for local development.
 
-[https://docs.ddev.com/en/stable/users/install/] (DDEV Install instructions here)
+(https://docs.ddev.com/en/stable/users/install/) [DDEV Install instructions here]
 
 After installing DDEV locally, the project can be started using the following command:
 
