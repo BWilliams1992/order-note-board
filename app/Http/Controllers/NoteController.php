@@ -30,12 +30,13 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'order_number' => 'required',
             'message' => 'required',
             'author' => 'required',
         ]);
-        return Inertia::render('Notes/Index', ['flash' => 'Note created successfully.']);
+        Note::create($validated);
+        return redirect('/')->with(['flash' => 'Note created successfully.']);
     }
 
     /**
